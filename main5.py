@@ -74,7 +74,7 @@ class TradingFOMCAnnouncementsSummaryEconomicProjections(QCAlgorithm):
             if self.Time.replace(minute=0, hour=0) in self.announcement_dates:
                 self.Log(f"today is {self.Time} is a FED day")
                 if self.Time.replace(minute=0, hour=self.start_time_hour) < self.Time < self.Time.replace(minute=self.end_time_min, hour=self.end_time_hour): 
-                    if not self.Portfolio[self.symbol].IsShort:
+                    if not self.Portfolio[self.symbol].IsLong:
                         self.SetHoldings(self.symbol, 1)
                         
                         #self.SetHoldings(self.symbol, 1)
